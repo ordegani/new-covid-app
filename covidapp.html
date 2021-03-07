@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fontawesome.com/icons/virus?style=solid/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+<style>
+.infoCountry__box{
+    border: 1px solid black;
+    padding: 5px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.infoCountry{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.title{
+    text-align: center;
+}
+
+::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.chart-container{
+    position: relative;
+    width: 95vw;
+}
+
+.info-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-btn button{
+    height: 25px;
+    margin:  5px 5px;
+    padding: 5px;
+}
+
+.container-countries{
+    display: flex;
+    flex-wrap: wrap;
+}
+.p-class{
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.show{
+    opacity: 1;
+}
+
+.infoCountry__box .mini-title{
+    font-weight: bold;
+}
+
+.loading{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.add-loading{
+    visibility: visible;
+}
+
+</style>
+</head>
+<body>
+ 
+    <div class="main-page">
+        <header class="title">
+            <h1>Covid-19 stats.</h1>
+        </header>
+        <div class="loading">
+        </div>
+        <div class="info">
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="infoCountry">
+
+                </div>
+            </div>
+        </div>
+        <div class="info-btn">
+            <div class="conatiner-continent">
+                <button class='btn-continent'>All</button>
+                <button class='btn-continent'>Asia</button>
+                <button class='btn-continent'>Europe</button>
+                <button class='btn-continent'>Africa</button>
+                <button class='btn-continent'>Americas</button>
+            </div>
+            
+            <div class="selecting-options">
+                <button class="option-btn-selector">cases</button>
+                <button class="option-btn-selector">deaths</button>
+                <button class="option-btn-selector">recovered</button>
+                <button class="option-btn-selector">critical</button>
+            </div>
+        </div>
+        <div class="container-countries">
+
+        </div>
+    </div>
+    <script src="./covidapp.js"></script>
+</body>
+</html>
